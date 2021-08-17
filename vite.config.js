@@ -3,14 +3,21 @@ import vue from "@vitejs/plugin-vue"
 
 import WindiCSS from "vite-plugin-windicss"
 import ViteComponents from "vite-plugin-components"
-import Pages from "vite-plugin-pages"
+const path = require("path")
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   plugins: [
-    vue({ script: { refSugar: true } }),
+    vue({
+      script: {
+        refSugar: true,
+      },
+    }),
     WindiCSS(),
     ViteComponents(),
-    Pages(),
   ],
 })
