@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <h1 text="xl" font="bold">Settings</h1>
+  </div>
 </template>
 
 <script setup></script>

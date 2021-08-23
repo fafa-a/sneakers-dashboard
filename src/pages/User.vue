@@ -1,5 +1,7 @@
 <template>
-  <h1>Aside menu</h1>
+  <div>
+    <h1 text="xl" font="bold">User</h1>
+  </div>
 </template>
 
 <script setup></script>
