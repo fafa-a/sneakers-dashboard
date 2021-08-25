@@ -1,20 +1,25 @@
 <template>
   <router-link
     :to="{ path: `/user` }"
-    w="85px"
-    h="85px"
     flex="~ row"
-    bg="hover:red-300"
+    bg="hover:red-300 dark:hover:blue-gray-400"
+    class="size"
   >
-    <div w="4px" h="full" class="red"></div>
-    <div w="81px" h="full" flex="~" align="items-center" justify="around">
+    <div :w="borderLeft" h="full" class="red"></div>
+    <div
+      :w="restOfSquarre"
+      h="full"
+      flex="~"
+      align="items-center"
+      justify="around"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#000000"
+        :stroke="svgColor"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
@@ -26,15 +31,46 @@
   </router-link>
 </template>
 
-<script setup></script>
-<style lang="postcss" scoped>
+<script setup>
+import { computed } from "vue-demi"
+
+const props = defineProps({
+  squarre: {
+    type: Number,
+    required: true,
+  },
+  leftBorder: {
+    type: Number,
+  },
+  identifier: {
+    type: String,
+    required: true,
+  },
+})
+const restOfSquarre = computed(
+  () => (props.squarre - props.leftBorder).toString() + props.identifier
+)
+
+const squarreSize = computed(() => props.squarre.toString() + props.identifier)
+const borderLeft = computed(
+  () => props.leftBorder.toString() + props.identifier
+)
+let bgColor = $ref("#94a3b8")
+let color = $ref("#0f172a")
+let svgColor = $ref("#dde1e3")
+</script>
+<style scoped>
+.size {
+  width: v-bind(squarreSize);
+  height: v-bind(squarreSize);
+}
 .active {
-  @apply bg-red-300;
+  background-color: v-bind(bgColor);
 }
 .active > div.red {
-  @apply bg-red-600;
+  background-color: v-bind(color);
 }
 .active > div > svg {
-  stroke: red;
+  stroke: v-bind(color);
 }
 </style>
