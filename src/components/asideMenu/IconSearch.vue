@@ -2,17 +2,11 @@
   <router-link
     :to="{ path: `/search` }"
     flex="~ row"
-    bg="hover:red-300 dark:hover:blue-gray-400"
+    bg="hover:blue-gray-400 dark:hover:blue-gray-400"
     class="size"
   >
-    <div :w="borderLeft" h="full" class="red"></div>
-    <div
-      :w="restOfSquarre"
-      h="full"
-      flex="~"
-      align="items-center"
-      justify="around"
-    >
+    <div class="border-active"></div>
+    <div class="rest-of-squarre" flex="~" align="items-center" justify="around">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -55,22 +49,30 @@ const squarreSize = computed(() => props.squarre.toString() + props.identifier)
 const borderLeft = computed(
   () => props.leftBorder.toString() + props.identifier
 )
-let bgColor = $ref("#94a3b8")
-let color = $ref("#0f172a")
-let svgColor = $ref("#dde1e3")
+let bgColorActive = $ref("#94a3b8")
+let colorActive = $ref("#0f17")
+let svgColor = $ref("#525252")
 </script>
 <style scoped>
 .size {
   width: v-bind(squarreSize);
   height: v-bind(squarreSize);
 }
-.active {
-  background-color: v-bind(bgColor);
+.border-active {
+  width: v-bind(borderLeft);
+  height: v-bind(squarreSize);
 }
-.active > div.red {
-  background-color: v-bind(color);
+.rest-of-squarre {
+  width: v-bind(restOfSquarre);
+  height: v-bind(squarre);
+}
+.active {
+  background-color: v-bind(bgColorActive);
+}
+.active > div.border-active {
+  background-color: v-bind(colorActive);
 }
 .active > div > svg {
-  stroke: v-bind(color);
+  stroke: v-bind(colorActive);
 }
 </style>

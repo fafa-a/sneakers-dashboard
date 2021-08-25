@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 text="xl" font="bold">Market</h1>
+    <h1 text="xl true-gray-600" font="bold" p="y-2">Market</h1>
   </div>
 </template>
 
