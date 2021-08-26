@@ -57,7 +57,7 @@ const borderLeft = computed(
   () => props.leftBorder.toString() + props.identifier
 )
 let bgColorActive = $ref("#94a3b8")
-let colorActive = $ref("#0f17")
+let colorActive = $ref("#0CF574")
 let svgColor = $ref("#525252")
 </script>
 <style scoped>

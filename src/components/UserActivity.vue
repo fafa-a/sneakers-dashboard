@@ -1,6 +1,6 @@
 <template>
-  <div bg="light-400 dark:blue-gray-900" p="3">
-    <h1 text="xl true-gray-600" font="bold">User & Activity</h1>
+  <div bg="light-theme dark:dark-theme" p="3">
+    <h1 text="xl color-txt-base" font="bold">User & Activity</h1>
     <ColorMode p="y-3" />
   </div>
 </template>

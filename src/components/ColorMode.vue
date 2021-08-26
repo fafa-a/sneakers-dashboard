@@ -52,7 +52,7 @@ const toggleTheme = () => {
 }
 
 let color = $ref("#525252")
-const svgColor = computed(() => (color = dark ? "#0f17" : "#525252"))
+const svgColor = computed(() => (color = dark ? "#0CF574" : "#525252"))
 </script>
 
 <style lang="scss" scoped></style>

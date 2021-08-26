@@ -1,13 +1,13 @@
 <template>
   <main flex="~" h="screen">
     <Menu
-      bg="light-400 dark:blue-gray-900"
+      bg="light-theme dark:dark-theme"
       w="5vw"
       :squarre="squarre"
       :identifier="identifier"
       :leftBorder="leftBorder"
     />
-    <RouterView w="65vw" bg="light-400 dark:blue-gray-900" p="3" />
+    <RouterView w="65vw" bg="light-theme dark:dark-theme" p="3" />
     <UserActivity w="30vw" />
   </main>
 </template>
