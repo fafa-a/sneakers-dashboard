@@ -2,7 +2,7 @@
   <router-link
     :to="{ path: `/alert` }"
     flex="~ row"
-    bg="hover:blue-gray-400 dark:hover:blue-gray-400"
+    bg="hover:blue-gray-400"
     class="size"
   >
     <div class="border-active"></div>

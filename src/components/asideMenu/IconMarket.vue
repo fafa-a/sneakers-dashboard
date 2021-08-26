@@ -2,7 +2,7 @@
   <router-link
     :to="{ path: `/market` }"
     flex="~ row"
-    bg="hover:blue-gray-400 dark:hover:blue-gray-400"
+    bg="hover:blue-gray-400"
     class="size"
   >
     <div class="border-active"></div>

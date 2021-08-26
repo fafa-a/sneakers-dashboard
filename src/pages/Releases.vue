@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 text="xl color-txt-base" font="bold">Upcoming Releases</h1>
+    <h1 text="xl true-gray-600" font="bold">Upcoming Releases</h1>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
   <router-link
     :to="{ path: `/` }"
     flex="~ row"
-    bg="hover:blue-gray-400 dark:hover:blue-gray-400"
+    bg="hover:blue-gray-400"
     class="size"
   >
     <div class="border-active"></div>
@@ -53,7 +53,7 @@ let bgColorActive = $ref("#94a3b8")
 let colorActive = $ref("#0CF574")
 let svgColor = $ref("#525252")
 </script>
-<style scoped>
+<style lang="postcss" scoped>
 .size {
   width: v-bind(squarreSize);
   height: v-bind(squarreSize);
