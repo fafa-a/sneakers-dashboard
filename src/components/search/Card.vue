@@ -1,8 +1,9 @@
 <template>
-  <div border="1 solid gray-500" class="w-33vw" p="x-2">
+  <div border="1 solid gray-500" class="w-33vw" p="x-2" text="color-txt-base">
     <img
       :src="data.Products[0].media.thumbUrl"
       :alt="data.Products[0].shortDescription"
+      w="full"
     />
     <p><span>sku:</span>{{ data.Products[0].styleId }}</p>
     <p><span>colors:</span>{{ data.Products[0].colorway }}</p>
