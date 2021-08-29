@@ -39,9 +39,22 @@
 </template>
 
 <script setup>
-import { computed } from "vue-demi"
+import { computed, watchEffect } from "vue-demi"
+import { useSettingsStore } from "@/store/settings"
 
-let dark = $ref(false)
+const store = useSettingsStore()
+let dark = $ref(Boolean)
+
+const setSvg = () => {
+  if (store.prefersColorTheme === "dark") {
+    dark = true
+  } else {
+    dark = false
+  }
+}
+
+watchEffect(() => setSvg())
+
 const toggleTheme = () => {
   dark = !dark
   if (dark) {

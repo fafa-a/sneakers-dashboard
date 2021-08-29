@@ -7,4 +7,8 @@ const useUserStore = defineStore({
   }),
 })
 
+const userSettings = defineStore({
+  id: "user",
+  prefersColorTheme: null,
+})
 export { useUserStore }

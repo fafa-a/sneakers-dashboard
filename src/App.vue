@@ -7,14 +7,17 @@
       :identifier="identifier"
       :leftBorder="leftBorder"
     />
-    <RouterView w="65vw" bg="light-theme dark:dark-theme" p="3" />
+    <RouterView w="65vw" />
     <UserActivity w="30vw" />
   </main>
 </template>
 
 <script setup>
+import { setPefersColorTheme } from "@/utils/colorTheme"
+
 const squarre = 5
 const identifier = "vw"
 const leftBorder = 0.2
-// import Menu from "./components/asideMenu/Menu.vue"
+
+setPefersColorTheme()
 </script>
