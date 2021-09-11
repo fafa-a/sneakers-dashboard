@@ -5,7 +5,6 @@
     <div v-if="isLoading">
       <Card :data="sneaker" />
     </div>
-    <p>hello</p>
   </div>
 </template>
 
