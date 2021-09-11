@@ -9,14 +9,15 @@
 </template>
 
 <script setup>
+import axios from "redaxios"
 let sneaker = $ref({})
 let isLoading = $ref(false)
 let href = $ref("")
 let dataSize = $ref({})
+let sizeArray = $ref({})
 const stores = ["stockx", "goat", "flight club", "klekt"]
 
 const getResults = async (query) => {
-  console.log("ok")
   const url = "https://serverless-api.fafaa.workers.dev"
   // const url = "http://127.0.0.1:8787"
 
@@ -29,9 +30,21 @@ const getResults = async (query) => {
 }
 
 const getSize = async () => {
-  const url = `https://stockx.com/api/products/${href}?includes=market`
-  const res = await fetch(url, { method: "GET" })
-  return res.json()
+  const response = await axios.get(
+    `https://stockx.com/api/products/${href}?includes=market`
+  )
+  const { data } = response
+  const products = data.Product.children
+  const keys = Object.keys(products)
+
+  const result = keys.map((key) => {
+    const variants = {}
+    variants.size = Number(products[key].shoeSize)
+    variants.price = products[key].market.lowestAsk
+    return variants
+  })
+  console.log(result)
+  sizeArray = result
 }
 
 const search = async (key) => {
