@@ -4,6 +4,7 @@
     <SearchInput @keywordSend="search" />
     <div v-if="isLoading">
       <Card :data="sneaker" />
+      <Table :sizes="sizeArray" />
     </div>
   </div>
 </template>
@@ -26,6 +27,7 @@ const getResults = async (query) => {
     body: JSON.stringify({ query }),
     headers: { "Content-Type": "application/json" },
   })
+
   return res.json()
 }
 
@@ -43,7 +45,6 @@ const getSize = async () => {
     variants.price = products[key].market.lowestAsk
     return variants
   })
-  console.log(result)
   sizeArray = result
 }
 
